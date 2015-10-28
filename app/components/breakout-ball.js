@@ -14,7 +14,6 @@ const SECOND            = 1000;
 const FRAMES_PER_SECOND = 30;
 
 export default Ember.Component.extend({
-  gameState: 0,
   collision: inject.service(),
   screensize: inject.service(),
   sounds: inject.service(),
@@ -42,7 +41,7 @@ export default Ember.Component.extend({
   }),
   moveBall: function(){
 
-    if(this.get('gameState') === 0) {
+    if(this.get('game_state') === 0) {
       return;
     }
 
@@ -59,12 +58,6 @@ export default Ember.Component.extend({
     } else {
       newY = this.get('_cy') - (1  * BALL_SPEED);
     }
-
-    /*
-    console.log('newX:',newX,' newY:',newY);
-    console.log('movingDown:',this.get('movingDown'),' movingRight:',this.get('movingRight'));
-    console.log('screenHeight:',this.get('screenHeight'),' screenWidth:',this.get('screenWidth'));
-    */
 
     this.set('_cx', newX);
     this.set('_cy', newY);
@@ -95,8 +88,9 @@ export default Ember.Component.extend({
     }, SECOND / FRAMES_PER_SECOND);
   },
   didUpdate: function() {
-    if(this.get('gameState') === 1) {
-      this.moveBall();
+    const gState = this.get('game_state');
+    if(gState === 1) {
+      run.scheduleOnce('afterRender', this, 'moveBall');
     }
   }
 });

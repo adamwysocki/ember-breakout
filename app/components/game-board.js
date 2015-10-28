@@ -24,14 +24,8 @@ export default Ember.Component.extend({
   height: computed( 'scale', function() {
     return this.get('_height');
   }),
-  reallyStartGame: function() {
-    console.log('changing game state to running');
-    this.set('gameState', RUNNING);
-  },
   startGame: function() {
-    run.later(()=>{
-      this.reallyStartGame();
-    }, 2000);
+    this.set('gameState', RUNNING);
   },
   didInsertElement: function() {
     run.scheduleOnce('afterRender', this, 'startGame');
