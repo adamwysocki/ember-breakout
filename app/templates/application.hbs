@@ -1,3 +1,19 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="main-container">
+  <table>
+    <tr>
+      <td colspan=4 class="title-header">
+        <h2 id="title" class="title">Ember Breakout</h2>
+      </td>
+    </tr>
+    <tr>
+      <td class="score">SCORE: {{score}}</td>
+      <td class="level">LEVEL: {{level}}</td>
+      <td class="lives">LIVES: {{lives}}</td>
+      <td class="sound">
+        <button {{action 'toggleSound'}} class="sound-control {{if soundMuted 'muted'}}"></button>
+      </td>
+    </tr>
+  </table>
+  {{game-board}}
+  {{outlet}}
+</div>

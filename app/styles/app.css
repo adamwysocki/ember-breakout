@@ -1,0 +1,80 @@
+.breakout-board {
+  background-color: black;
+}
+
+.breakout-paddle {
+  background-color: white;
+}
+
+.title {
+  text-transform: uppercase;
+  font-family: tahoma;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+.main-container {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
+.sound-control {
+  background-image: url('/images/sound_on.png');
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+  height: 32px;
+  width: 32px;
+  border: 0;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+table {
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: 'Coda Caption', sans-serif;
+}
+
+.title-header {
+  padding-bottom: 20px;
+  vertical-align: middle;
+}
+
+.score {
+  width:33%;
+  text-align:left;
+}
+
+.level {
+  width:33%;
+  text-align:center;
+}
+
+.lives {
+  width:28%;
+  text-align:right;
+}
+
+.sound {
+  width:5%;
+  text-align:right;
+}
+
+.muted {
+  background-image: url('/images/sound_off.png');
+  background-repeat: no-repeat;
+  background-size: 32px 32px;
+}
+
+button:focus {
+  outline-color: white;
+  outline: 0;
+}
